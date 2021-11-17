@@ -1,15 +1,15 @@
-#carousel {
+.carousel_wrapper {
   width: 800px;
   margin: 20px auto;
   text-align: center;
 }
 
-#carousel .pictures img {
+.carousel_wrapper .pictures img {
   width: 100%;
   display: none;
 }
 
-#carousel .pictures img:first-child {
+.carousel_wrapper .pictures img:first-child {
   display: block;
 }
 

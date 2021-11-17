@@ -1,23 +1,23 @@
-class carousel {
+class Сarousel {
   constructor(arr) {
     this.arr = arr;
+    this.index = 0;
   }
 
   next() {
-    let index = 0,
-
-    return {
-      next: function () {
-        let element;
-        element = this.arr[index];
-        index++;
-        return element
-      }
-    }    
+      let element;
+        element = this.arr[this.index];
+        this.index++;
+        return element;
   }
 }
 
+let data = ["pic1", "img2", "photo3"]
 
+let carousel = new Сarousel(data);
+
+console.log(carousel.next())
+console.log(carousel.next())
 
 
 
