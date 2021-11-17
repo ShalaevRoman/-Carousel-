@@ -1,0 +1,18 @@
+#carousel {
+  width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#carousel .pictures img {
+  width: 100%;
+  display: none;
+}
+
+#carousel .pictures img:first-child{
+  display: block;
+}
+
+.buttons {
+  margin-top: 20px;
+}
