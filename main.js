@@ -21,10 +21,11 @@ class Сarousel {
   }
 };
 
-const DATAIMG = ["img/Leonid.png", "img/Recruits.png", "img/Homework.png"],
-      carousel = new Сarousel(DATAIMG),
-      next = document.querySelector(".next");
+const DATAIMG = ["img/Leonid.png", "img/Recruits.png", "img/Homework.png"];
+const carousel = new Сarousel(DATAIMG);
+const next = document.querySelector(".next");
 
+document.querySelector(".pictures").innerHTML = `<img src="${carousel.next()}" alt="img">`
   
 next.addEventListener("click", function(event) {
   document.querySelector(".pictures").innerHTML =`<img src="${carousel.next()}" alt="img"">`;
