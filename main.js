@@ -21,16 +21,14 @@ class Сarousel {
   }
 };
 
-const DATAIMG = ["/img/Leonid.png", "/img/Recruits.png", "/img/Homework.png"],
+const DATAIMG = ["img/Leonid.png", "img/Recruits.png", "img/Homework.png"],
       carousel = new Сarousel(DATAIMG),
-      next = document.querySelector(".next"),
-      img = document.querySelector(".pictures img"),
-      path = "file:///D:/front_end/Sparta_camp/Shalaiev_Roman_hw1"
+      next = document.querySelector(".next");
 
-console.dir(img)     
-next.onclick = function() {
-  img.src = path + carousel.next();
-}      
+  
+next.addEventListener("click", function(event) {
+  document.querySelector(".pictures").innerHTML =`<img src="${carousel.next()}" alt="img"">`;
+})
 
 
 
