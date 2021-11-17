@@ -16,6 +16,12 @@ class Сarousel {
     return this.index <= this.arr.length;
   }
 
+  previous() {
+    const element = this.arr[this.index];
+    this.index = this.index - 1;
+    if
+  }
+
   rewind() {
     this.index = 0;
   }
@@ -28,10 +34,12 @@ const next = document.querySelector(".next");
 document.querySelector(".pictures").innerHTML = `<img src="${carousel.next()}" alt="img">`
   
 next.addEventListener("click", function(event) {
-  document.querySelector(".pictures").innerHTML =`<img src="${carousel.next()}" alt="img"">`;
-  if(carousel.next() === null){
+  let value = carousel.next();
+  if(value === null){
     carousel.rewind();
+    value = carousel.next();
   }
+  document.querySelector(".pictures").innerHTML =`<img src="${value}" alt="img"">`;
 })
 
 
