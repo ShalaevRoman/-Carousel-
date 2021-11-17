@@ -6,12 +6,8 @@
 
 .carousel_wrapper .pictures img {
   width: 100%;
-  display: none;
 }
 
-.carousel_wrapper .pictures img:first-child {
-  display: block;
-}
 
 .buttons {
   margin-top: 20px;

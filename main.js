@@ -5,7 +5,7 @@ class Сarousel {
   }
 
   next() {
-        let element = this.arr[this.index];
+        const element = this.arr[this.index];
         this.index++;
         if(!this.hasNext()) {
           return null;
@@ -19,16 +19,19 @@ class Сarousel {
   rewind() {
     this.index = 0;
   }
-}
+};
 
-let data = ["pic1", "img2", "photo3"]
+const DATAIMG = ["/img/Leonid.png", "/img/Recruits.png", "/img/Homework.png"],
+      carousel = new Сarousel(DATAIMG),
+      next = document.querySelector(".next"),
+      img = document.querySelector(".pictures img"),
+      path = "file:///D:/front_end/Sparta_camp/Shalaiev_Roman_hw1"
 
-let carousel = new Сarousel(data);
+console.dir(img)     
+next.onclick = function() {
+  img.src = path + carousel.next();
+}      
 
-console.log(carousel.next())
-console.log(carousel.next())
-console.log(carousel.next())
-console.log(carousel.next())
 
 
 
