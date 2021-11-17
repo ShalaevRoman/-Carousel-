@@ -28,6 +28,9 @@ const next = document.querySelector(".next");
 document.querySelector(".pictures").innerHTML = `<img src="${carousel.next()}" alt="img">`
   
 next.addEventListener("click", function(event) {
+  if(carousel.next() === null){
+    carousel.index = 0;
+  }
   document.querySelector(".pictures").innerHTML =`<img src="${carousel.next()}" alt="img"">`;
 })
 
