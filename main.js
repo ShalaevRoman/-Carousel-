@@ -5,29 +5,33 @@ class Сarousel {
   }
 
   next() {
-        const element = this.arr[this.index];
-        this.index++;
-        if(!this.hasNext()) {
-          return null;
-        }
-        return element;
+    this.index++;
+    const element = this.arr[this.index];
+    if(!this.hasNext()) {
+      return null;
+    }
+    return element;
   }
 
   previous() {
-        this.index = this.index - 1;
-        const element = this.arr[this.index];
-        if(this.hasPrev()) {
-          return null;
-        }
-        return element;
+    this.index--;
+    const element = this.arr[this.index];
+    if(!this.hasPrev()) {
+       return null;
+    }
+    return element;
+  }
+
+  current() {
+    return this.arr[this.index];
   }
 
   hasNext() {
-    return this.index <= this.arr.length;
+    return this.index < this.arr.length;
   }
 
   hasPrev() {
-    return this.index < 0;
+    return this.index >= 0;
   }
 
   rewind() {
@@ -35,7 +39,7 @@ class Сarousel {
   }
 
   lastElem() {
-    this.index = this.arr.length;
+    this.index = this.arr.length - 1;
   }
 
 };
@@ -45,26 +49,26 @@ const carousel = new Сarousel(DATAIMG);
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 
-document.querySelector(".pictures").innerHTML = `<img src="${carousel.next()}" alt="img">`
-  
 next.addEventListener("click", function(event) {
   let value = carousel.next();
-  if(value === null){
+  if(!value){
     carousel.rewind();
-    value = carousel.next();
-  }
+    value = carousel.current();
+  };
   document.querySelector(".pictures").innerHTML =`<img src="${value}" alt="img"">`;
 });
 
 prev.addEventListener("click", function(event) {
   let value = carousel.previous();
-  if(value === null){
+  if(!value){
     carousel.lastElem();
-    value = carousel.previous();
+    value = carousel.current();
   }
   document.querySelector(".pictures").innerHTML =`<img src="${value}" alt="img"">`;
+  console.log(carousel.index)
 });
 
+document.querySelector(".pictures").innerHTML = `<img src="${carousel.current()}" alt="img">`
 
 
 
